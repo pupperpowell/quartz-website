@@ -13,7 +13,7 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "umami", host: 'umami.pw1.xyz', websiteId: "1739c670-4c62-4fcc-8847-f86839cbf4b3"
+      provider: "umami", host: 'https://umami.pw1.xyz', websiteId: '1739c670-4c62-4fcc-8847-f86839cbf4b3'
     },
     locale: "en-US",
     baseUrl: "george.wiki",

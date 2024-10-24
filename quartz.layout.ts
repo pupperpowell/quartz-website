@@ -1,3 +1,4 @@
+import { index } from "d3"
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
@@ -8,8 +9,9 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/pupperpowell/quartz-website",
+      Source: "https://github.com/pupperpowell/quartz-website",
       // "Discord Community": "https://discord.gg/cRFFHYye7t",
+      "Home": "/"
     },
   }),
 }
@@ -24,14 +26,23 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   left: [
     Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.MobileOnly(Component.Spacer()),
+    Component.DesktopOnly(Component.TableOfContents()),
+    Component.DesktopOnly(Component.RecentNotes(
+      {
+        title: "Recent writing",
+        showTags: true,
+        filter: (f) => f.slug! !== "index",
+      }
+    )),
+    
+    // Component.DesktopOnly(Component.Explorer()),
   ],
   right: [
     // Component.Graph(),
-    Component.DesktopOnly(Component.TableOfContents()),
+    Component.Search(),
+    
     Component.Backlinks(),
   ],
 }
