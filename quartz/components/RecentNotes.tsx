@@ -58,20 +58,6 @@ export default ((userOpts?: Partial<Options>) => {
                       <Date date={getDate(cfg, page)!} locale={cfg.locale} />
                     </p>
                   )}
-                  {opts.showTags && (
-                    <ul class="tags">
-                      {tags.map((tag) => (
-                        <li>
-                          <a
-                            class="internal tag-link"
-                            href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}
-                          >
-                            {tag}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
                 </div>
               </li>
             )

@@ -1,5 +1,6 @@
 ---
-tags: 
+tags:
+  - essay
 title: This is a garden, not a blog
 date: 2024-10-19
 ---

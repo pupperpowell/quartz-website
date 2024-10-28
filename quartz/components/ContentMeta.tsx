@@ -34,6 +34,7 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 
     if (text) {
       const segments: JSX.Element[] = []
+      const subtitles: (string | JSX.Element)[] = []
 
       if (fileData.dates && fileData.slug !== "index") { // don't show on index.md
         if (fileData.dates.created) {
@@ -49,6 +50,14 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
             <span>
               last edited <TimeMeta value={fileData.dates.modified} />
             </span>,
+          )
+        }
+
+        if (fileData.frontmatter?.subtitle) {
+          // const uppercaseSubtitle = fileData.frontmatter.subtitle.toUpperCase();
+          subtitles.push(
+            // `${uppercaseSubtitle}`
+            `${fileData.frontmatter.subtitle}`
           )
         }
       }
@@ -73,9 +82,15 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       // )
 
       return (
-        <p show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
+        <div  show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
           {segments}
-        </p>
+          {subtitles.length > 0 && (
+          <p style={{ margin: '0', padding: '0', fontStyle:'italic' }}  class={classNames(displayClass, "content-meta")}>
+            Or, {subtitles}
+          </p>
+        )}
+        </div>
+        
       )
     } else {
       return null

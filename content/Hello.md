@@ -1,5 +1,8 @@
 ---
 date: 2024-09-30
+title: Hello
+tags:
+  - journal
 ---
 My name is George Powell, I’m about to turn 24, and I barely have the faintest idea of what I’m doing. But I’ve learned a lot, even though I still have a very long way to go. 
 
