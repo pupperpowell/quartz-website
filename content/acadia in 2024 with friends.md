@@ -3,6 +3,7 @@ subtitle: A man emerges from his cave
 title: Acadia in October
 tags:
   - journal
+date: 2024-10-26
 ---
 I spend a majority of my time completely alone. A few weekends ago, I did the opposite; I went on a trip with my girlfriend and 16 other friends, and spent each moment in their presence for 72 hours. It's been years since I spent time with so many people for so long. And surprisingly, it was great!
 
